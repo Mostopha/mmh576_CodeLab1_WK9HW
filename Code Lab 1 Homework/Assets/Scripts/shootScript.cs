@@ -13,21 +13,14 @@ public class shootScript : MonoBehaviour {
 		
 	}
 
-    void FireRocket()
-    {
-        Rigidbody2D rocketClone = (Rigidbody2D)Instantiate(rocket, transform.position, transform.rotation);
-        rocketClone.AddForce (Vector3.right * speed);
-
-        // You can also acccess other components / scripts of the clone
-       
-    }
+ 
 
     // Update is called once per frame
     void Update () {
 
         if (Input.GetKeyDown(shootButton))
         {
-            FireRocket();
+            GetComponent<PrimaryShot>().FireRocket(Vector3.zero);
         }
 		
 	}
